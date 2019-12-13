@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+<div class="col-md-12" >
+  <br>
+
+  <form (ngSubmit)="formSubmit()" #f="ngForm" name="fname">
+  <div class="panel panel-primary">
+      <div class="panel-heading">Login...</div>
+      <div class="panel-body">
+  
+    <div class="form-group">
+  <label for="usrName">UserName</label>
+  <input type="text" class="form-control" name="username" ngModel #var1="ngModel"
+  required>
+     
+  <div *ngIf="!var1.valid && var1.touched">
+      Name is required.
+    </div>
+
+</div>
+<div class="form-group">
+  <label for="psw">Password</label>
+  <input type="text" class="form-control"  id="psw" name="password" ngModel>
+</div>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Submit</button>
+ 
+<hr>
+  
+
+</div>
+</div>
+
+</form>
+<a *ngFor="let var2 of users" routerLink="/user">
+
+  {{var2.name}}
+</a>
+<button class="btn btn-primary" type="button" routerLink="">Back</button>
+<button class="btn btn-primary" type="button" (click)="fun2()">Click</button>
+<router-outlet></router-outlet>
+  </div>
+
+
+</div>
+
+</div>
+    
+   
+ 
